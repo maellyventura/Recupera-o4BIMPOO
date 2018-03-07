@@ -1,0 +1,46 @@
+
+public class Personagem {
+
+	private String nome;
+	private int maxHP;
+	private int HPAtual;
+	
+	
+
+	@SuppressWarnings("unused")
+	public void equiparArma (Arma<?> a){
+		boolean maos = false;
+		int maoDireita;
+		int maoEsquerda;
+		if (maos == true){
+			
+			
+		}
+		
+	}
+	
+    public void addPocao (Pocao p){
+    	p = new Pocao(nome, HPAtual);
+
+    }
+    
+    public void recuperarVida (){
+    	
+    }
+    public void sofrerDano (int dano){
+    	try {
+    		
+    		
+    	catch {
+    		
+    	PersonagemFalecidoException
+    	}
+    	}
+    	
+    }
+    
+    public String status(){
+		return nome + HPAtual + maxHP;
+    	
+    }
+    }
