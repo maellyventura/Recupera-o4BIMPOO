@@ -1,9 +1,5 @@
 ackage javaapplication2;
 
-/**
- *
- * @author Eliane
- */
 public class PersonagemFacelido extends Exception {
 
     public PersonagemFacelido() {
