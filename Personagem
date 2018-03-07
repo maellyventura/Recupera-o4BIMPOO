@@ -3,10 +3,6 @@ package javaapplication2;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Eliane
- */
 public class Personagem {
     private String nome;
     private int HPMax;
