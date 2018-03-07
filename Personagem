@@ -1,46 +1,71 @@
 
+package javaapplication2;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Eliane
+ */
 public class Personagem {
-
-	private String nome;
-	private int maxHP;
-	private int HPAtual;
-	
-	
-
-	@SuppressWarnings("unused")
-	public void equiparArma (Arma<?> a){
-		boolean maos = false;
-		int maoDireita;
-		int maoEsquerda;
-		if (maos == true){
-			
-			
-		}
-		
-	}
-	
-    public void addPocao (Pocao p){
-    	p = new Pocao(nome, HPAtual);
-
-    }
+    private String nome;
+    private int HPMax;
+    private int HPAtual;
+    private boolean equiparE;
+    private boolean equiparD;
+    ArrayList<Pocao> inventario ;
+    ArrayList<Arma> armas ;
     
-    public void recuperarVida (){
-    	
-    }
-    public void sofrerDano (int dano){
-    	try {
-    		
-    		
-    	catch {
-    		
-    	PersonagemFalecidoException
-    	}
-    	}
-    	
-    }
+public Personagem(String nome, int HPMAX){
+this.nome = nome;
+this.HPMax = HPMAX;
+}
+public void equiparArma(Arma a){
+    boolean arm = a.usaApenasUmaMao();
+if(equiparD == false && arm == false){
+    this.equiparD = true;
+    this.equiparE = true;
+    this.armas.add(a);}
     
-    public String status(){
-		return nome + HPAtual + maxHP;
-    	
-    }
-    }
+else if(equiparD == false && arm){
+    this.equiparD = true;
+    this.armas.add(a);
+}
+else if(equiparD && equiparE == false && arm ){
+    this.equiparE = true;
+    this.armas.add(a);
+}}
+public void addPocao(Pocao a){
+this.inventario.add(a);
+}
+public void SofrerDano(int dano){
+this.HPAtual = this.HPAtual - dano;
+try{
+    if(this.HPAtual <= 0){
+throw new PersonagemFacelido();}
+}
+catch(PersonagemFacelido ex){
+    System.out.print("Personagem Faleceu. tente voltar ao ultimo save :)");
+}}
+public String status(){
+String Per = this.nome + String.valueOf(this.HPMax)+ String.valueOf(this.HPAtual);
+String Arm= "";
+String po = "";
+for(Arma a : this.armas){
+     Arm = Arm + a.examinar();
+}
+for(Pocao a : this.inventario){
+     po = po + a.examinar();
+}
+String dado = Per + Arm + po;
+        return dado;
+}
+
+public void recuperarVida(){
+Pocao po = this.inventario.get(this.inventario.size()-1);
+this.HPAtual = this.HPAtual + po.usar();
+if(this.HPAtual > this.HPMax){
+    this.HPAtual = this.HPMax;
+}
+}
+}
