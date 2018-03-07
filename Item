@@ -1,9 +1,5 @@
 package javaapplication2;
 
-/**
- *
- * @author Eliane
- */
 public abstract class Item {
     protected String nome;
     
