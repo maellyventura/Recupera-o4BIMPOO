@@ -1,11 +1,5 @@
 package javaapplication2;
-
 import java.util.Random;
-
-/**
- *
- * @author Eliane
- */
 public abstract class Arma extends Item {
     private int danoMAX;
     private int durabilidade;
